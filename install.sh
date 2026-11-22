@@ -77,7 +77,7 @@ fi
 echo -e "\n${YELLOW}[6/6] Verifying configuration file (.env)...${NC}"
 if [ ! -f ".env" ]; then
     if [ -f ".env.example" ]; then
-        cp .env.example .env
+        cp test.env .env
         echo -e "${GREEN}Created .env from .env.example.${NC}"
         echo -e "${YELLOW}IMPORTANT: Open .env and insert your DISCORD_TOKEN before starting!${NC}"
     fi
