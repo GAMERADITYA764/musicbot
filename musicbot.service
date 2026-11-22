@@ -1,0 +1,27 @@
+[Unit]
+Description=Discord High-Fidelity Music Bot Service
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Replace 'ubuntu' with your VPS user (or root) and adjust working directory path
+User=ubuntu
+WorkingDirectory=/opt/musicbot
+ExecStart=/opt/musicbot/.venv/bin/python3 /opt/musicbot/bot.py
+Restart=always
+RestartSec=5s
+KillSignal=SIGINT
+TimeoutStopSec=15s
+
+# Security sandboxing
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=/opt/musicbot/data
+
+# Environment
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
