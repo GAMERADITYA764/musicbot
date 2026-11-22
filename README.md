@@ -80,7 +80,7 @@ sudo apt-get install -y python3 python3-pip python3-venv ffmpeg libopus0 git cur
 
 ### 2. Clone and Run Automated Installer
 ```bash
-git clone [https://github.com/GAMERADITYA764/musicbot] musicbot
+git clone https://github.com/GAMERADITYA764/musicbot
 cd musicbot
 
 chmod +x install.sh start.sh
